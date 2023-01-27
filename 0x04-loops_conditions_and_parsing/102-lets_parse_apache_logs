@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Use awk to print the first and ninth field (IP and HTTP status code)
+# from the apache-access.log file, separated by a space
+awk '{ print $1 " " $9 }' apache-access.log
