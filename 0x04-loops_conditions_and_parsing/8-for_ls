@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # This script displays the content of the current directory in a list format, where only the part of the name after the first dash is displayed
 
-for file in *; do
-  if [[ ! -d $file && ! $file =~ ^\..* ]]; then
-    IFS='-' read -ra parts <<< "$file"
-    echo ${parts[1]}
-  fi
+for p in *
+do
+	echo "${p/*-/}"
 done
+
