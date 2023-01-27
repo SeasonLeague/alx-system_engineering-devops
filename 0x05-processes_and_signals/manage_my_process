@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Bash script to manage 101-manage_my_process.
+while true
+do
+    sudo bash -c 'echo "I am alive!" >> /tmp/my_process'
+    sleep 2
+done
