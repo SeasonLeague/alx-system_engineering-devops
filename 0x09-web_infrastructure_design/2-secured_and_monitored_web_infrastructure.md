@@ -1,3 +1,5 @@
+![Altbook](https://raw.githubusercontent.com/B3zaleel/0x09-web_infrastructure_design/main/2-secured_and_monitored_web_infrastructure.jpg)
+
 ## Description
 This is a 3-server web infrastructure that is secured, monitored, and serves encrypted traffic.
 

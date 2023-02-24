@@ -1,3 +1,4 @@
+![Altanother](https://raw.githubusercontent.com/B3zaleel/0x09-web_infrastructure_design/main/3-scale_up.jpg)
 ## Description:
 ---
 - In this scenario, we are adding an additional server to the infrastructure and splitting the components into their own servers. We are also configuring the load-balancer as a cluster with the existing one.
