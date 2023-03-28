@@ -4,4 +4,4 @@
 # Bits must be 4096.
 # Passphrase must be `betty`.
 
-ssh-keygen -t rsa -b 4096 -f school -N betty
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N betty
