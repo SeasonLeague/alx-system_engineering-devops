@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Configures nginx server to redirect request.
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
+echo 'Hello World!' | sudo tee -a /var/www/html/index.html
+
+ServerConf=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+        if (\$request_filename ~ redirect_me){
+                rewrite ^ https://github.com/SeasonLeague permanent;
+        }
+}"
+
+sudo bash -c "echo -e '$ServerConf' > /etc/nginx/sites-enabled/default"
+
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+        sudo service nginx start
+else
+        sudo service nginx restart 
+fi
