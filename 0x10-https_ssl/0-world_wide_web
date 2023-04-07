@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Digs info about subdomains.
+
+DomainInfo () {
+    A_RECORD=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | grep -v 'ANSWER SECTION:')
+    REC_TYPE=$(echo "$A_RECORD" | awk '{print $4}')
+    IP=$(echo "$A_RECORD" | awk '{print $5}')
+    echo "The subdomain $2 is a $REC_TYPE record and points to $IP"
+}
+
+if [ $# == 2 ]
+then
+    DomainInfo "$1" "$2"
+elif [ $# == 1 ]
+then
+    DomainInfo "$1" "www"
+    DomainInfo "$1" "lb-01"
+    DomainInfo "$1" "web-01"
+    DomainInfo "$1" "web-02"
+fi
