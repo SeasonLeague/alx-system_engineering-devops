@@ -1,0 +1,22 @@
+When you type https://www.google.com in your browser and hit Enter, the requested website should load on your browser in a matter of seconds. This seemingly simple action from your end, however, involves multiple stages of communication and processing between various components of the internet infrastructure.
+
+Here's an elaborate breakdown of what happens behind the scenes when you connect to Google:
+
+1. DNS Request: The domain name system (DNS) is responsible for translating the URL in the web address you enter into a machine-readable IP address, so the browser can locate the server. Your request to access Google's website is sent from your browser to a DNS server, which matches the domain name (google.com) to an IP address (172.217.6.174), and sends it back to your browser.
+
+2. TCP/IP: Once your browser has the IP address, it initiates a TCP/IP (Transmission Control Protocol/Internet Protocol) connection with the server at that IP address. TCP provides reliable connection-oriented communication, with error-checking and flow control, and IP ensures that the data packets are transmitted across the internet, in the right direction, to the right destination.
+
+3. Firewall: The connection between your computer and the server passes through several additional hop points on the internet and crosses many networks. During this journey, it may encounter a firewall, a security program that prepares to allow or block information going in and out of your computer.
+
+4. HTTPS/SSL: When you use https:// in the URL to connect to the website, the browser and server establish an encrypted SSL (Secure Socket Layer) connection, using a security certificate, before any data is transmitted. SSL encrypts the data being sent, so it can't be intercepted, stolen, or tampered with by someone else.
+
+5. Load Balancer: To ensure that the website can handle simultaneous requests from multiple users, a load-balancer may get involved. When Google's servers receive millions of requests per second, even slight differences in processing speed can cause delays in loading the website. A load-balancer solves this problem by distributing incoming requests evenly across multiple web servers, so that users can access the website faster and with less downtime.
+
+6. Web Server: The web server is the computer on the server hardware that hosts the web application. When your browser sends an HTTP request, the webserver refers to the web pages and other resources requested by your browser and sends them back to your browser.
+
+7. Application Server: The application server runs the code that generates dynamic content that you view in your browser, such as search results, and is responsible for authenticating users and maintaining session data. It captures and processes the user's request, gathers the required data from a database, and generates dynamic output to be delivered to the web server.
+
+8. Database: The database stores and retrieves data required by the application server to generate the dynamic content of a website. For example, when you search something on Google, the application server queries the database for matches and sends the results back to your browser.
+
+In conclusion, when you type https://www.google.com into your browser and click enter, you send a request to the DNS Server, which then translates the domain name into an IP address. Your browser then establishes a TCP/IP connection, and the HTTPS/SSL encrypted connection is set up. If there is a load balancer involved, it distributes the requests between multiple web servers, and the application server generates the dynamic content by retrieving data from the database. Finally, the requested webpage is returned to the browser, which then renders the webpage for you. It's fascinating to think about the complicated and multifaceted process involved in what we perceive as a simple action.
+
